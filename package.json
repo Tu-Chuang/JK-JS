@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "iconv-lite": "^0.6.3",
+    "meilisearch": "^0.48.2"
+  }
+}

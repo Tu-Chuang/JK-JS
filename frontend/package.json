@@ -1,0 +1,35 @@
+{
+  "name": "search-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "5.2.0",
+    "@ant-design/icons-svg": "4.2.1",
+    "@typescript-eslint/eslint-plugin": "8.22.0",
+    "@typescript-eslint/parser": "8.22.0",
+    "antd": "5.23.3",
+    "next": "^14.2.23",
+    "rc-util": "^5.44.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-error-boundary": "^5.0.0",
+    "typescript": "5.7.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "22.13.0",
+    "@types/react": "19.0.8",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.19.0",
+    "eslint-config-next": "15.1.6"
+  }
+}
