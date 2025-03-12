@@ -1,0 +1,417 @@
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --primary-color: #4285f4;
+  --secondary-color: #34a853;
+  --danger-color: #ea4335;
+  --warning-color: #fbbc05;
+  --bg-primary: #ffffff;
+  --bg-secondary: rgba(255, 255, 255, 0.7);
+  --text-primary: #333333;
+  --text-secondary: #777777;
+  --border-color: #e0e0e0;
+  --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --scrollbar-track: #f0f0f0;
+  --scrollbar-thumb: #c0c0c0;
+  --item-active-bg: rgba(55, 125, 255, 0.08);
+  --item-hover-bg: rgba(240, 240, 240, 0.7);
+  --number-bg: #f0f0f0;
+  --number-text: #333333;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+  --border-radius: 8px;
+  --animation-duration: 0.2s;
+  
+  /* Light theme colors */
+  --text-color: #333;
+  --text-color-secondary: #666;
+  --background-color: #f8f9fa;
+  --background-secondary: #f5f7fa;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(255, 255, 0, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  
+  /* Dark theme colors */
+  --dark-background: #121212;
+  --dark-background-secondary: #1e1e1e;
+  --dark-text: #f0f0f0;
+  --dark-text-secondary: #bbb;
+  --dark-border-color: #444;
+  --dark-shadow-color: rgba(0, 0, 0, 0.3);
+  --dark-highlight-color: rgba(255, 230, 0, 0.5);
+  --dark-glass-bg: rgba(30, 30, 30, 0.7);
+  --dark-glass-border: rgba(255, 255, 255, 0.1);
+  
+  /* Eye care mode colors */
+  --eye-care-background: #f5f5dc;
+  --eye-care-background-secondary: #f8f8e6;
+  --eye-care-text: #333333;
+  --eye-care-text-secondary: #666666;
+  --eye-care-border: #c0c0a8;
+  --eye-care-link: #006666;
+  --eye-care-link-hover: #004d4d;
+  --eye-care-button: #e6e6c8;
+  --eye-care-button-hover: #d9d9b3;
+  --eye-care-highlight: rgba(255, 255, 0, 0.2);
+  --eye-care-glass-bg: rgba(245, 245, 220, 0.7);
+  --eye-care-glass-border: rgba(192, 192, 168, 0.2);
+  
+  /* 共用变量 */
+  --transition-speed: 0.3s;
+  --max-width: 1200px;
+  --header-height: 64px;
+  --content-width: 1100px;
+  
+  /* 添加课程卡片渐变 */
+  --card-gradient-light: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 247, 250, 0.9) 100%);
+  --card-gradient-dark: linear-gradient(135deg, rgba(40, 40, 40, 0.7) 0%, rgba(30, 30, 30, 0.8) 100%);
+  --card-hover-gradient-light: linear-gradient(135deg, rgba(250, 252, 255, 0.9) 0%, rgba(240, 245, 255, 0.95) 100%);
+  --card-hover-gradient-dark: linear-gradient(135deg, rgba(45, 45, 45, 0.8) 0%, rgba(35, 35, 35, 0.9) 100%);
+  
+  /* 增强卡片阴影 */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+  
+  /* 鲜明的卡片边框颜色 */
+  --card-border: rgba(230, 230, 230, 0.8);
+  --card-hover-border: rgba(100, 150, 255, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme, .dark-theme {
+  --primary-color: #3773ff;
+  --secondary-color: #34a853;
+  --danger-color: #ff6b6b;
+  --warning-color: #ffd166;
+  --bg-primary: #121212;
+  --bg-secondary: rgba(30, 30, 30, 0.7);
+  --text-primary: #f0f0f0;
+  --text-secondary: #aaaaaa;
+  --border-color: #444444;
+  --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --shadow-large: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --scrollbar-track: #2a2a2a;
+  --scrollbar-thumb: #555555;
+  --item-active-bg: rgba(55, 125, 255, 0.15);
+  --item-hover-bg: rgba(80, 80, 80, 0.5);
+  --number-bg: #333333;
+  --number-text: #f0f0f0;
+  --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+  
+  background-color: #121212;
+  color: var(--text-primary);
+  
+  /* 暗色主题下的卡片变量 */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.2);
+  --card-border: rgba(70, 70, 70, 0.8);
+  --card-hover-border: rgba(70, 130, 255, 0.5);
+}
+
+/* Glass effect elements */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-small);
+}
+
+body.dark-theme .glass, .dark-theme .glass {
+  background: rgba(30, 30, 30, 0.7);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* 输入框通用样式 */
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  outline: none;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  border-color: var(--dark-border-color);
+  background-color: var(--dark-background-secondary);
+  color: var(--dark-text);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
+}
+
+/* Highlighted text in search results */
+.highlight {
+  background-color: var(--highlight-color);
+  padding: 0 2px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+body.dark-theme .highlight {
+  background-color: var(--dark-highlight-color);
+}
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #4a90e2, #a78bfa);
+}
+
+body.dark-theme .gradient-bg {
+  background: linear-gradient(135deg, #3a7bc8, #8a6fd7);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #4a90e2, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.slide-down {
+  animation: slideDown 0.5s ease-out;
+}
+
+/* 简体/繁体切换动画 */
+.lang-transition {
+  transition: all 0.3s ease;
+}
+
+.lang-transition.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.lang-transition.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 页面内容区域 */
+.page-content {
+  padding-top: var(--header-height);
+  min-height: 100vh;
+}
+
+/* 旋转动画 */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* 响应式变量 */
+@media (max-width: 768px) {
+  :root {
+    --content-width: 95%;
+  }
+}
+
+/* Eye care mode */
+body.eye-care-mode {
+  color: var(--eye-care-text);
+  background: var(--eye-care-background);
+  --background-color: var(--eye-care-background);
+  --text-color: var(--eye-care-text);
+  --border-color: var(--eye-care-border);
+}
+
+body.eye-care-mode input,
+body.eye-care-mode textarea,
+body.eye-care-mode select {
+  background-color: var(--eye-care-background-secondary);
+  color: var(--eye-care-text);
+  border-color: var(--eye-care-border);
+}
+
+body.eye-care-mode button {
+  background-color: var(--eye-care-button);
+  color: var(--eye-care-text);
+  border-color: var(--eye-care-border);
+}
+
+body.eye-care-mode button:hover {
+  background-color: var(--eye-care-button-hover);
+}
+
+body.eye-care-mode a {
+  color: var(--eye-care-link);
+}
+
+body.eye-care-mode a:hover {
+  color: var(--eye-care-link-hover);
+}
+
+body.eye-care-mode .glass {
+  background: var(--eye-care-glass-bg);
+  border: 1px solid var(--eye-care-glass-border);
+}
+
+body.eye-care-mode .highlight {
+  background-color: var(--eye-care-highlight);
+}
+
+body.eye-care-mode ::-webkit-scrollbar-track {
+  background: var(--eye-care-background-secondary);
+}
+
+body.eye-care-mode ::-webkit-scrollbar-thumb {
+  background-color: var(--eye-care-border);
+}
+
+body.eye-care-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--eye-care-button-hover);
+}
+
+/* 导航栏样式修复 */
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-medium);
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-theme .nav-container, .dark-theme .nav-container {
+  background-color: #1a1a1a;
+}
+
+/* 课程卡片动画 */
+@keyframes cardPulse {
+  0% {
+    box-shadow: var(--card-shadow);
+  }
+  50% {
+    box-shadow: var(--card-hover-shadow);
+  }
+  100% {
+    box-shadow: var(--card-shadow);
+  }
+}
+
+/* 课程卡片悬停动画 */
+.course-card-hover {
+  transition: all 0.3s ease;
+}
+
+.course-card-hover:hover {
+  transform: translateY(-3px);
+  animation: cardPulse 2s infinite;
+} 

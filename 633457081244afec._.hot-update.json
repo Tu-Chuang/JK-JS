@@ -1,5 +1,0 @@
-{
-  "c": ["被修改的模块"], // changed modules
-  "r": ["被移除的模块"], // removed modules
-  "m": ["新增的模块"]    // added modules
-} 
